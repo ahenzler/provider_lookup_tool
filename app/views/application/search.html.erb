@@ -1,0 +1,42 @@
+<h1>Search For Providers</h1>
+<br>
+<%= form_with url: "/search", method: :get, local: true do |f| %>
+  <%= f.label :search, "PROVIDER SEARCH BY FULL NAME:" %>
+  <br>
+  <br>
+  <%= f.label :search, "First Name:" %>
+  <%= f.text_field :FirstName %>
+  <%= f.label :search, "Last Name:" %>
+  <%= f.text_field :LastName %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<%= form_with url: "/search", method: :get, local: true do |f| %>
+  <%= f.label :search, "PROVIDER SEARCH BY LAST NAME AND STATE:" %>
+  <br>
+  <br>
+  <%= f.label :search, "Last Name:" %>
+  <%= f.text_field :LastName %>
+  <%= f.label :search, "State Initials:" %>
+  <%= f.text_field :StateInitials %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<%= form_with url: "/search", method: :get, local: true do |f| %>
+  <%= f.label :search, "PROVIDER SEARCH BY STATE AND SPECIALTY:" %>
+  <br>
+  <br>
+  <%= f.label :search, "State Initials:" %>
+  <%= f.text_field :StateInitials %>
+  <%= f.label :search, "Specialty:" %>
+  <%= f.text_field :Specialty %>
+  <%= f.submit "Search" %>
+<% end %>
