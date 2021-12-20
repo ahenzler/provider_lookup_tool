@@ -5,7 +5,7 @@ class Api::V1::ProviderController < ApplicationController
 
   def results
     result_array = ProviderFacade.provider(provider_params[:first_name], provider_params[:last_name], provider_params[:state_initials], provider_params[:specialty])
-    @providers = result_array.paginate(page: params[:page], per_page: 10)
+    @providers = result_array.paginate(page: params[:page], per_page: 20)
   end
 
   private
