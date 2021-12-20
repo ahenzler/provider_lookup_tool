@@ -12,6 +12,6 @@ RSpec.describe "welcome page" do
   it 'has a link to search here' do
     click_link 'Search Here'
 
-    expect(current_path).to eq('/search')
+    expect(current_path).to eq('/api/v1/search')
   end
 end

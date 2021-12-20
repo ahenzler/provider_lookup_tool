@@ -4,7 +4,7 @@ RSpec.describe 'the search page' do
   before :each do
     visit '/'
     click_link 'Search Here'
-    expect(current_path).to eq('/search')
+    expect(current_path).to eq('/api/v1/search')
   end
 
   it "displays search forms for last name and first name" do

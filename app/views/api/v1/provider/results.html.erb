@@ -1,0 +1,12 @@
+<%= render "layouts/navbar" %>
+<%= yield %>
+<h1>Search Results</h1>
+<br>
+<%@providers.each do |provider|%>
+<h2>Provider: <%=provider.full_name%></h2>
+<h3>Contact Information: <%=provider.address_list%></h3>
+<p>NPI Number: <%=provider.npi_number%></p>
+<br>
+<%end%>
+
+<%= will_paginate @providers%>
