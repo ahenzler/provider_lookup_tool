@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe 'the NPI service' do
   context 'returns data correctly' do
     it 'can search by full name' do
-      data = NpiService.get_search_results_first_name_last_name('Mark', 'Henzler')
-
-      # require 'pry'; binding.pry
+      data = NpiService.get_search_results("Mark", "Henzler", "", "")
 
       expect(data).to be_a(Hash)
       expect(data).to have_key(:results)
@@ -15,7 +13,7 @@ RSpec.describe 'the NPI service' do
     end
 
     it 'can search by last name and state' do
-      data = NpiService.get_search_results_last_name_state_initials('Henzler', 'ID')
+      data = NpiService.get_search_results("", "Henzler", "ID", "")
 
       expect(data).to be_a(Hash)
       expect(data).to have_key(:results)
@@ -25,7 +23,7 @@ RSpec.describe 'the NPI service' do
     end
 
     it 'can search by state and specialty' do
-      data = NpiService.get_search_results_state_initials_specialty('ID', 'Emergency Medicine')
+      data = NpiService.get_search_results("", "", "ID", "Emergency Medicine")
 
       expect(data).to be_a(Hash)
       expect(data).to have_key(:results)
