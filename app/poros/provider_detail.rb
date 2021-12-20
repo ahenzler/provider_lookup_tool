@@ -5,15 +5,19 @@ class ProviderDetail
 
 
   def initialize(data)
-    @full_name = full_name(data)
+    @full_name = find_full_name(data)
     @npi_number = data[:number]
     @address_list = addresses(data)
   end
 
-  def full_name(data)
+  def find_full_name(data)
     first_name = data[:basic][:first_name]
     last_name = data[:basic][:last_name]
-    first_name.concat(" ",last_name)
+    if !first_name.nil?
+      first_name.concat(" ",last_name)
+    else
+      data[:basic][:name]
+    end
   end
 
   def addresses(data)
